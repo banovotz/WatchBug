@@ -7,8 +7,10 @@ import {
   View
 } from 'react-native';
 import Tabbar from 'react-native-tabbar-bottom'
-import Wall from './Wall';
-import WallItemDetails from './WallItemDetails';
+import Watches from './Watches';
+import WatchDetails from './WatchDetails';
+import UploadImage from './UploadImage';
+
 
 class WatchTabs extends Component {
   constructor() {
@@ -24,8 +26,8 @@ class WatchTabs extends Component {
 
 
         {this.state.page === "HomeScreen" && <Text>Screen1</Text>}
-        {this.state.page === "Wall" && <Wall navigation={this.props.navigation}>Wall</Wall>}
-        {this.state.page === "ProfileScreen" && <Text>Screen3</Text>}
+        {this.state.page === "Watches" && <Watches navigation={this.props.navigation}>Watches</Watches>}
+        {this.state.page === "UploadImage" && <UploadImage navigation={this.props.navigation}>Upload</UploadImage>}
         {this.state.page === "ChatScreen" && <Text>Screen4</Text>}
         {this.state.page === "SearchScreen" && <Text>Screen5</Text>}
 
@@ -41,12 +43,12 @@ class WatchTabs extends Component {
               icon: "home",
             },
             {
-              page: "Wall",
+              page: "Watches",
               icon: "notifications",
               badgeNumber: 11,
             },
             {
-              page: "ProfileScreen",
+              page: "UploadImage",
               icon: "person",
             },
             {
@@ -69,8 +71,9 @@ class WatchTabs extends Component {
 
 const RootStack = createStackNavigator(
   {
-    Wall: Wall,
-    Details: WallItemDetails,
+    Watches: Watches,
+    Details: WatchDetails,
+    UploadImage: UploadImage,
     HomeScreen: WatchTabs
   },
   {
